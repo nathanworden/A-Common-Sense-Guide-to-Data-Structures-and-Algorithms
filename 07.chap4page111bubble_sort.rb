@@ -20,21 +20,20 @@
 require 'pry'
 
 def bubble_sort(array)
-  unsorted_until_index = array.length - 1
   sorted = false
-
   while !sorted
     sorted = true
-    for i in (0...unsorted_until_index)
+    (array.length - 1).times do |i|
       if array[i] > array[i + 1]
         sorted = false
         array[i], array[i + 1] = array[i + 1], array[i]
       end
     end
-    unsorted_until_index -= 1
   end
 end
 
 arr = [ 65, 55 ,45, 35, 25, 15, 10]
 bubble_sort(arr)
 p arr
+
+p 3 / 2
