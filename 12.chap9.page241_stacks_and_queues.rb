@@ -53,14 +53,18 @@ end
 
 def reverse(str)
   stack = Stack.new
-  output = ''
+
   str.each_char do |char| 
     stack.push(char)
   end
-  str.length.times do |idx|
-    output += stack.pop
+
+  new_string = ""
+
+  while stack.read
+    new_string += stack.pop
   end
-  output
+  
+  new_string
 end
 
 p reverse("abcde")
