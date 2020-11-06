@@ -41,4 +41,16 @@ class SortableArray
 
     return left_pointer
   end
+
+  def quicksort!(left_index, right_index)
+    return if right_index - left_index <= 0
+    pivot_index = partition!(left_index, right_index)
+    quicksort!(left_index, pivot_index - 1)
+    quicksort!(pivot_index + 1, right_index)
+  end
 end
+
+array = [0, 5, 2, 1, 6, 3]
+sortable_array = SortableArray.new(array)
+sortable_array.quicksort!(0, array.length - 1)
+p sortable_array.array
