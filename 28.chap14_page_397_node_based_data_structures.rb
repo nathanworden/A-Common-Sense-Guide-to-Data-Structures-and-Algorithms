@@ -101,6 +101,37 @@ class LinkedList
     node_after_deleted_node = current_node.next_node.next_node
     current_node.next_node = node_after_deleted_node
   end
+
+  def print_list
+    current_node = first_node
+    while current_node
+      p current_node.data
+      current_node = current_node.next_node
+    end
+  end
+
+  def last_element
+    current_node = first_node
+    while current_node.next_node
+      current_node = current_node.next_node
+    end
+    current_node.data
+  end
+
+  def reverse!
+    previous_node = nil
+    current_node = first_node
+
+    while current_node
+      next_node = current_node.next_node
+
+      current_node.next_node = previous_node
+
+      previous_node = current_node
+      current_node = next_node
+    end
+    self.first_node = previous_node
+  end
 end
 
 node_1 = Node.new("once")
@@ -116,7 +147,11 @@ node_3.next_node = node_4
 list = LinkedList.new(node_1)
 list.read(3)
 
-p list.index_of("time")
+# p list.index_of("time")
+# list.print_list
+# p list.last_element
+list.reverse!
+list.print_list
 
 ### Efficiency of Reading a Linked List
 
