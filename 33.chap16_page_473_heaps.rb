@@ -26,3 +26,4 @@
 # - The value of each node must be greater than each of its descendant nodes. This condition is known as the heap condition.
 # - The tree must be complete
 
+# The value of each node must be greater than each of its descendant nodes:
