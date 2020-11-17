@@ -46,6 +46,12 @@ class SortableArray
       while @array[right_pointer] > pivot do
         right_pointer -= 1
       end
+      
+      if left_pointer >= right_pointer
+        break
+      else
+        @array[left_pointer], @array[right+pointer] = @array[right_pointer], @array[left_pointer]
+        
     end
   end
 end
